@@ -42,6 +42,7 @@ def create_nonblocking(host, port):
             s.close()
             inputs.remove(s)
             break
+        
         for s in writable:
             logging.info('Non Blocking - Sending...')
             s.sendall(b'Hello, world')
@@ -49,6 +50,7 @@ def create_nonblocking(host, port):
             s.close()
             outputs.remove(s)
             break
+        
         for s in exceptional:
             logging.info('Non Blocking - Error!')
             s.close()
